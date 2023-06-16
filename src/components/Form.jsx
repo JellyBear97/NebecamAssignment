@@ -16,7 +16,8 @@ function Form({ todoTitle, todoBody, setTodoTitle, setTodoBody, setTodos, todos 
     if (Boolean(todoBody.replaceAll(' ', '')) === false) {
       return alert('내용을 입력해주세요');
     }
-    const newList = [...todos, { id: todos.length, todoTitle, todoBody, isDone: false }];
+    const id = new Date()
+    const newList = [...todos, { id: id, todoTitle, todoBody, isDone: false }];
     setTodos(newList);
     setTodoTitle('');
     setTodoBody('');
